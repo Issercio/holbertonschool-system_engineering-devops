@@ -1,3 +1,62 @@
-## Diagramme
+# 0. Simple Web Stack
 
-![Diagramme du stack web simple](https://i.imgur.com/n00oMZ2.png)
+## Infrastructure Web - Simple Stack
+
+Voici le schéma de l'infrastructure web composée d'un seul serveur :
+
+![Schéma du stack web simple](https://i.imgur.com/n00oMZ2.png)
+
+---
+
+## Présentation de l'infrastructure
+
+- **Nom de domaine :** `www.foobar.com` → redirige vers l'adresse IP `8.8.8.8`
+  - Type d'enregistrement DNS : `A` (adresse IPv4)
+- **Serveur unique**, qui contient :
+  - Un **serveur web** (Nginx)
+  - Un **serveur d'application** (ex: PHP, Node.js…)
+  - Le **code source** de l'application
+  - Une **base de données** (MySQL)
+
+---
+
+## Protocole de communication
+
+Le serveur communique avec l'utilisateur via le **protocole HTTP ou HTTPS** sur TCP/IP.
+
+---
+
+## Explications des composants
+
+- **Qu'est-ce qu'un serveur ?**  
+  Une machine (physique ou virtuelle) qui fournit des services ou des ressources à d'autres ordinateurs via un réseau.
+
+- **Rôle du nom de domaine :**  
+  Facilite l'accès à un site en traduisant une adresse compréhensible par l'humain (`www.foobar.com`) en adresse IP (`8.8.8.8`).
+
+- **Type de DNS record pour www.foobar.com :**  
+  Un **enregistrement A** qui associe le nom de domaine à une adresse IPv4.
+
+- **Rôle du serveur web (Nginx) :**  
+  Reçoit les requêtes HTTP des utilisateurs, sert les fichiers statiques, et transmet les requêtes dynamiques au serveur d'application.
+
+- **Rôle du serveur d'application :**  
+  Exécute le code de l'application, gère la logique métier, traite les formulaires, etc.
+
+- **Rôle de la base de données (MySQL) :**  
+  Stocke les données (utilisateurs, produits, etc.) et les rend accessibles à l'application.
+
+---
+
+## Limitations de cette architecture
+
+- **SPOF (Single Point of Failure) :**  
+  Si le serveur tombe en panne, tout le site devient inaccessible.
+
+- **Indisponibilité pendant les maintenances :**  
+  Toute opération de déploiement ou de redémarrage du serveur cause une interruption de service.
+
+- **Scalabilité limitée :**  
+  Un seul serveur ne peut pas gérer un grand nombre de requêtes simultanées. Aucune possibilité de répartition de charge.
+
+---
