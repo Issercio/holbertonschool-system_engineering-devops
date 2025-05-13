@@ -1,3 +1,56 @@
 # Simple Web Stack
 
 ![Simple Web Stack](https://i.imgur.com/4yiiSNU.png)
+
+## Infrastructure Explanation
+
+When a user wants to access www.foobar.com, the following components work together:
+
+### Components:
+
+1. **Server**: Physical or virtual machine (IP: 8.8.8.8)
+   - Hardware/software that serves and processes requests
+   - Hosts all components needed to deliver the website
+
+2. **Domain Name (foobar.com)**:
+   - Human-readable address that maps to server IP
+   - WWW record is an A record pointing to 8.8.8.8
+   
+3. **Web Server (Nginx)**:
+   - Handles HTTP requests
+   - Serves static content
+   - Manages reverse proxy to application server
+
+4. **Application Server**:
+   - Executes application logic
+   - Processes dynamic content
+   - Communicates with database
+
+5. **Application Files**:
+   - Contains website codebase
+   - Business logic and website functionality
+
+6. **Database (MySQL)**:
+   - Stores website data
+   - Manages data operations
+   - Ensures data persistence
+
+### Communication Flow:
+- Client-Server communication uses HTTP/HTTPS protocols
+- TCP/IP protocol suite handles data transmission
+
+### Infrastructure Issues:
+
+1. **SPOF (Single Point of Failure)**:
+   - Single server = single point of failure
+   - No redundancy or failover
+
+2. **Maintenance Downtime**:
+   - Updates require server restart
+   - No redundancy during maintenance
+   - Results in service interruption
+
+3. **Scalability Limitations**:
+   - Cannot handle high traffic loads
+   - No load balancing
+   - Limited by single server resources
