@@ -59,5 +59,3 @@ Le serveur communique avec l'utilisateur via le **protocole HTTP ou HTTPS** sur 
 
 - **Scalabilité limitée :**  
   Un seul serveur ne peut pas gérer un grand nombre de requêtes simultanées. Aucune possibilité de répartition de charge.
-
----
