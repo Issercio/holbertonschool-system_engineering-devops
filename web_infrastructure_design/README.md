@@ -1,29 +1,44 @@
 # Web Infrastructure Design
 
-This project focuses on understanding and designing basic web infrastructure systems. The goal is to visualize and explain how web applications work under the hood and identify common architectural issues.
+This project focuses on designing and explaining different web infrastructure architectures. Each task presents a unique infrastructure design with increasing complexity and improvements.
 
----
+## Tasks Overview
 
-## Task: 0. Simple Web Stack
+### 0. Simple Web Stack
+- One server web infrastructure design
+- Hosts website reachable at www.foobar.com
+- Components include Nginx, Application Server, MySQL
+[Details](./0-simple_web_stack)
 
-Design a basic one-server web infrastructure to host a website reachable at `www.foobar.com`.
+### 1. Distributed Web Infrastructure 
+- Three server web infrastructure design
+- Adds load balancing and database replication
+- Introduces redundancy and high availability
+[Details](./1-distributed_web_infrastructure)
 
-### Requirements:
-- **1 domain name:** `foobar.com` with a `www` subdomain pointing to `8.8.8.8`
-- **1 server** including:
-  - Nginx (web server)
-  - Application server (e.g., PHP, Node.js)
-  - Application code (backend files)
-  - MySQL database
+### 2. Secured and Monitored Web Infrastructure
+- Three server secured web infrastructure
+- Adds security (firewalls, HTTPS) and monitoring
+- Implements SSL and application performance tracking
+[Details](./2-secured_and_monitored_web_infrastructure)
 
-### Key Concepts Explained:
-- What is a server
-- Role of a domain name
-- Type of DNS record used
-- Role of web server, app server, and database
-- Protocol used to serve the website
-- Infrastructure limitations: SPOF, downtime during updates, lack of scalability
+### 3. Scale Up
+- Components separated onto dedicated servers
+- Load balancer cluster configuration
+- Enhanced scalability and resource allocation
+[Details](./3-scale_up)
 
-Check the `0-simple_web_stack` file for the whiteboard screenshot and breakdown.
+## Learning Objectives
+- Understanding web infrastructure components
+- Server architecture and distribution
+- Load balancing and high availability
+- Security implementation and monitoring
+- Database replication and scalability
+- Infrastructure scaling and optimization
 
----
+## Project Structure
+Each task includes:
+- Infrastructure design diagram
+- Detailed component explanation
+- Configuration specifics
+- Potential issues and limitations

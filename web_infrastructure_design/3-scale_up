@@ -1,0 +1,59 @@
+# Scaled Up Web Infrastructure
+
+![Scaled Infrastructure](https://imgur.com/a/IQrCNjP)
+
+## Infrastructure Overview
+
+This scaled-up infrastructure separates components onto dedicated servers and adds load balancer clustering:
+
+### Components:
+
+1. **2 Load Balancers (HAproxy)**:
+   - Configured as a cluster
+   - High availability
+   - Enhanced reliability
+   - Load distribution
+
+2. **Dedicated Web Server**:
+   - Nginx configuration
+   - Static content handling
+   - HTTP request processing
+   - Separated from application logic
+
+3. **Dedicated Application Server**:
+   - Business logic isolation
+   - Resource optimization
+   - Specialized scaling
+   - Focused performance tuning
+
+4. **Dedicated Database Server**:
+   - MySQL configuration
+   - Data storage specialization
+   - Independent resource allocation
+   - Optimized for database operations
+
+### Component Separation Benefits:
+
+1. **Resource Allocation**:
+   - Dedicated resources per role
+   - Optimized performance
+   - Independent scaling
+   - Targeted maintenance
+
+2. **Security Enhancement**:
+   - Component isolation
+   - Reduced attack surface
+   - Granular access control
+   - Focused security measures
+
+3. **Maintenance Advantages**:
+   - Independent updates
+   - Role-specific monitoring
+   - Simplified troubleshooting
+   - Reduced downtime impact
+
+4. **Scaling Flexibility**:
+   - Component-specific scaling
+   - Resource optimization
+   - Cost-effective growth
+   - Performance tuning

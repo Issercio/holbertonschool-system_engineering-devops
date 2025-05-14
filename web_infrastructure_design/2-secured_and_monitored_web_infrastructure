@@ -1,0 +1,85 @@
+# Secured and Monitored Web Infrastructure
+
+![Secured Infrastructure](https://imgur.com/a/eYikggc)
+
+## Infrastructure Overview
+
+This three-server secured infrastructure for www.foobar.com includes security measures and monitoring:
+
+### Components:
+
+1. **3 Firewalls**:
+   - Protect each server
+   - Control incoming/outgoing traffic
+   - Network security enforcement
+
+2. **SSL Certificate (HTTPS)**:
+   - Encrypts client-server communication
+   - Serves www.foobar.com over HTTPS
+   - Ensures data privacy and integrity
+
+3. **3 Monitoring Clients**:
+   - Data collectors on each server
+   - Performance and health metrics
+   - Real-time monitoring
+
+4. **Load Balancer (HAproxy)**:
+   - SSL termination
+   - Traffic distribution
+   - High availability
+
+5. **3 Web Servers (Nginx)**:
+   - Secure HTTP handling
+   - Static content serving
+   - Reverse proxy functionality
+
+6. **3 Application Servers**:
+   - Secured business logic
+   - Database interaction
+   - Dynamic content processing
+
+7. **MySQL Database Cluster**:
+   - Primary-Replica setup
+   - Encrypted data storage
+   - Secure replication
+
+### Security and Monitoring Specifics:
+
+1. **Firewall Purpose**:
+   - Access control
+   - Network segmentation
+   - Threat prevention
+
+2. **HTTPS/SSL**:
+   - Data encryption in transit
+   - Server authentication
+   - Trust establishment
+
+3. **Monitoring Configuration**:
+   - System metrics collection
+   - Performance tracking
+   - Log analysis
+   - QPS monitoring via request count
+
+### Infrastructure Issues:
+
+1. **SSL Termination**:
+   - Decryption at load balancer
+   - Internal traffic potentially unencrypted
+   - Additional security measures needed
+
+2. **Write Scalability**:
+   - Single write-capable MySQL server
+   - Potential bottleneck
+   - Single point of failure
+
+3. **Uniform Server Components**:
+   - Resource competition
+   - Lack of specialization
+   - Maintenance complexity
+   - Scale limitations
+
+4. **Monitoring Overhead**:
+   - Resource consumption
+   - Network bandwidth usage
+   - Storage requirements

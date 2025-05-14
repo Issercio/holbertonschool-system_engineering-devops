@@ -1,0 +1,63 @@
+# Distributed Web Infrastructure
+
+![Distributed Web Infrastructure](https://imgur.com/a/ZQmasip)
+
+## Infrastructure Overview
+
+This three-server infrastructure for www.foobar.com includes load balancing and database replication:
+
+### Components:
+
+1. **2 Servers**:
+   - Identical configurations for redundancy
+   - Each running web server, application server, and codebase
+   - Allows for high availability and fault tolerance
+
+2. **Load Balancer (HAproxy)**:
+   - Distributes incoming traffic between servers
+   - Uses Round Robin algorithm
+   - Enables Active-Active setup
+
+3. **Web Server (Nginx) on each server**:
+   - Handles HTTP requests
+   - Serves static content
+   - Acts as reverse proxy
+
+4. **Application Server on each server**:
+   - Processes dynamic content
+   - Executes business logic
+   - Communicates with database
+
+5. **MySQL Database Cluster**:
+   - Primary-Replica (Master-Slave) configuration
+   - Primary: handles writes
+   - Replica: handles reads, syncs with Primary
+
+### Specifics Explained:
+
+1. **Load Balancer Configuration**:
+   - Round Robin algorithm: requests distributed sequentially
+   - Active-Active setup: both servers handle traffic simultaneously
+   - (vs Active-Passive where one server is on standby)
+
+2. **Database Primary-Replica**:
+   - Primary node: handles write operations
+   - Replica node: replicates Primary data
+   - Provides read scalability and backup
+   - Asynchronous replication
+
+### Infrastructure Issues:
+
+1. **SPOF (Single Points of Failure)**:
+   - Load balancer is single point of failure
+   - Primary MySQL database
+
+2. **Security Issues**:
+   - No firewall protection
+   - No HTTPS encryption
+   - Exposed ports and services
+
+3. **Monitoring Gaps**:
+   - No monitoring system
+   - No performance metrics
+   - No alert system
